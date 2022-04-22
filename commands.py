@@ -43,7 +43,7 @@ class TVMDump(gdb.Command):
     def invoke(self, args, from_tty):
         arg_list = gdb.string_to_argv(args)
         for arg in arg_list:
-            gdb.execute('print tvm::Dump('+arg+')')
+            gdb.execute('print tvm::Dump(tvm::NodeRef&)('+arg+')')
 
     def complete(self, text, word):
         return gdb.COMPLETE_SYMBOL
